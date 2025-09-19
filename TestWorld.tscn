@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjp8gl5mi54nf"]
+
+[ext_resource type="PackedScene" uid="uid://b3lxpqa2ma88h" path="res://player.tscn" id="1_cjeqb"]
+[ext_resource type="PackedScene" uid="uid://d1dg5qmgw53ev" path="res://guard.tscn" id="2_y4ur2"]
+[ext_resource type="PackedScene" uid="uid://dwcu5pfymdyfm" path="res://camera.tscn" id="3_8re3b"]
+[ext_resource type="TileSet" uid="uid://cv3i8rjpj6v43" path="res://world_tilemap.tres" id="4_ttpew"]
+
+[node name="TestWorld" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_cjeqb")]
+position = Vector2(355, 357)
+
+[node name="Guard" parent="." instance=ExtResource("2_y4ur2")]
+position = Vector2(394, 352)
+
+[node name="Camera" parent="." instance=ExtResource("3_8re3b")]
+position = Vector2(333, 326)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("4_ttpew")
