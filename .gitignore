@@ -3,4 +3,4 @@
 /android/
 
 # Ableton exports
-sounds/*.asd
+*.asd
