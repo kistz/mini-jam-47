@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1dg5qmgw53ev"]
+[gd_scene load_steps=10 format=3 uid="uid://d1dg5qmgw53ev"]
 
 [ext_resource type="Script" uid="uid://6dpa15qcis71" path="res://guard.gd" id="1_30cdx"]
 [ext_resource type="Texture2D" uid="uid://oi3unef8qtu6" path="res://atlas/general.png" id="1_opr0s"]
+[ext_resource type="Texture2D" uid="uid://did25eq08ljqs" path="res://atlas/triangle-mask.png" id="3_aoykg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_30cdx"]
 atlas = ExtResource("1_opr0s")
@@ -35,7 +36,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lrhy8")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walking",
 "speed": 5.0
 }]
 
@@ -47,8 +48,27 @@ script = ExtResource("1_30cdx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ay375")
-frame_progress = 0.4116208
+animation = &"walking"
+frame_progress = 0.7319809
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_opr0s")
+
+[node name="Path2D" type="Path2D" parent="."]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+color = Color(1.1437415, 1.1595821, 0.5787581, 0.44705883)
+polygon = PackedVector2Array(4, 10, 98, -13, 98, 28)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(34, 10)
+scale = Vector2(1.1721679, 1.1640626)
+color = Color(1, 1, 0.5803922, 1)
+energy = 0.4
+texture = ExtResource("3_aoykg")
+texture_scale = 0.2

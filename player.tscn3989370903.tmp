@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3lxpqa2ma88h"]
+[gd_scene load_steps=10 format=3 uid="uid://b3lxpqa2ma88h"]
 
 [ext_resource type="Script" uid="uid://kktpai0wfqy2" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://oi3unef8qtu6" path="res://atlas/general.png" id="2_i3pqv"]
-[ext_resource type="AudioStream" uid="uid://b6ymsj0xlvxs3" path="res://sounds/chicken-steps.wav" id="3_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhfnw"]
 atlas = ExtResource("2_i3pqv")
@@ -53,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(10, 5)
+size = Vector2(10, 12)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
@@ -63,14 +62,9 @@ sprite_frames = SubResource("SpriteFrames_tdg3f")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8, 8)
 position_smoothing_enabled = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_i3pqv")
-volume_db = -50.0
-pitch_scale = 1.47
