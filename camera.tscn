@@ -6,8 +6,6 @@
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_diie0")
-rotation_freedom = null
-rotation_speed = null
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(38, -1)

@@ -13,14 +13,14 @@ enum CameraFrames {
 	FrontR =76,
 }
 
-Back 13 0
-BackL 12 0
-BackR 12 0 flipped
-Left 12 1
-Right 12 1 flipped
-Front 13 2
-FrontL 12 2 
-FrontR 12 2 flipped
+#Back 13 0
+#BackL 12 0
+#BackR 12 0 flipped
+#Left 12 1
+#Right 12 1 flipped
+#Front 13 2
+#FrontL 12 2 
+#FrontR 12 2 flipped
 
 @export
 var rotation_freedom:float= 90
