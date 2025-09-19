@@ -27,5 +27,32 @@ var rotation_freedom:float= 90
 @export
 var rotation_speed:float =1
 
-func _physics_process(delta: float) -> void:
-	rotation = sin(Time.get_ticks_msec() *0.01 * rotation_speed * delta) * rotation_freedom *delta
+@onready
+var start_rot=rotation
+
+func _ready() -> void:
+	var tween= get_tree().create_tween()
+	rotation= deg_to_rad(-rotation_freedom/2)
+	tween.tween_property($PointLight2D,"rotation",deg_to_rad(rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.set_parallel(false)
+	tween.tween_property($PointLight2D,"rotation",deg_to_rad(-rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.set_loops()
+	
+	
+
+func _process(delta: float) -> void:
+	if global_rotation_degrees < -22.5 && global_rotation_degrees > 22.5:
+		$Sprite2D.frame = CameraFrames.Front
+		$Sprite2D.h_flip = false
+	if global_rotation_degrees < -67.5 && global_rotation_degrees > -22.5:
+		$Sprite2D.frame = CameraFrames.FrontL
+		$Sprite2D.h_flip = false
+	if global_rotation_degrees < -67.5-45  && global_rotation_degrees > -67.5:
+		$Sprite2D.frame = CameraFrames.Left
+		$Sprite2D.h_flip = false
+	if global_rotation_degrees < -67.5-90  && global_rotation_degrees > -67.5-45:
+		$Sprite2D.frame = CameraFrames.BackL
+		$Sprite2D.h_flip = false
+	if global_rotation_degrees < -67.5-90  && global_rotation_degrees > -67.5-45:
+		$Sprite2D.frame = CameraFrames.Back
+		$Sprite2D.h_flip = false

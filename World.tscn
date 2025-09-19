@@ -30,5 +30,3 @@ curve = ExtResource("4_js7pq")
 
 [node name="Camera" parent="." instance=ExtResource("5_eu7l1")]
 position = Vector2(103, 593)
-rotation = 1.7226399
-rotation_freedom = 90.0
