@@ -6,11 +6,14 @@
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_diie0")
+rotation_freedom = 120.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(38, -1)
+position = Vector2(1.6785174e-06, -0.40000153)
+rotation = 1.5707964
 color = Color(0.98039216, 0, 0, 0.43529412)
 texture = ExtResource("1_u5kg4")
+offset = Vector2(38.4, 0)
 texture_scale = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

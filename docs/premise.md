@@ -36,3 +36,33 @@ If this happens the mastermind clones another chicken and sends it in after the 
 ### Mechanics
 * Guards, instantly catches the chicken if within range
 * Camera, allerts guards to your position if caught in vision
+* Destroy Glass?
+* Destroy Camera?
+* Breakable Items (Pott)
+
+
+* Press E to yoink the egg 
+* Item slot for has egg
+* deliver egg outside
+* caught mechanic
+* pathfinding chase
+
+* timer
+* background timer for final time
+
+* ITEMS?? -> prob no because scope
+* Destroy circuit for camera?
+* Lock door????
+* guards that caught disspear?
+
+* Egg is protected and button unprotects it?
+
+* lasers which dissapear when triggered 
+
+* unlock doors from other side for shortcut next try
+
+* eggs drop if die on way
+
+* pickpocket guard (sargent card)
+
+* Knock down pedastal?
