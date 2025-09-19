@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 
 const speed= 50.0
@@ -13,12 +13,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("up"):
-		position.y += -speed * delta
+		move_and_collide(Vector2(0,-speed) * delta)
 	if Input.is_action_pressed("down"):
-		position.y += speed * delta
+		move_and_collide(Vector2(0,speed) * delta)
 	if Input.is_action_pressed("left"):
-		position.x += -speed * delta
+		move_and_collide(Vector2(-speed,0)* delta) 
 		animation.flip_h = true
 	if Input.is_action_pressed("right"):
 		animation.flip_h = false
-		position.x += speed * delta
+		move_and_collide(Vector2(speed,0)* delta)
