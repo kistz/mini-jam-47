@@ -5,6 +5,8 @@ const speed= 50.0
 
 var has_egg = false
 
+var crounching: bool =false
+
 @onready
 var egg_slot = $backpack_egg
 
@@ -13,6 +15,8 @@ var animation = $AnimatedSprite2D
 
 @onready
 var respawn_anim = $AnimationPlayer
+
+var skin:int =1
 
 @onready
 var respwaning: bool = true
@@ -23,7 +27,7 @@ var start_position = global_position
 const empty_slot:int= 250
 
 func _ready() -> void:
-	animation.play("idle")
+	play_hide()
 	respawn_anim.animation_finished.connect(func(_d): respwaning =false)
 	respawn_anim.play("respawn")
 	egg_slot.frame=empty_slot
@@ -34,22 +38,35 @@ func _process(delta: float) -> void:
 	if respwaning:
 		return
 	if Input.is_action_pressed("up"):
+		run()
 		move_and_collide(Vector2(0,-speed) * delta)
 	if Input.is_action_pressed("down"):
+		run()
 		move_and_collide(Vector2(0,speed) * delta)
 	if Input.is_action_pressed("left"):
+		run()
 		move_and_collide(Vector2(-speed,0)* delta) 
 		animation.flip_h = true
 	if Input.is_action_pressed("right"):
+		run()
 		animation.flip_h = false
 		move_and_collide(Vector2(speed,0)* delta)
+	if !Input.is_action_pressed("up") &&!Input.is_action_pressed("down")&&!Input.is_action_pressed("left")&&!Input.is_action_pressed("right"):
+		play_hide()
+	
+func run():
+	animation.play("run_"+str(skin))
+	crounching=false
 
+func play_hide():
+	if !crounching:
+		animation.play("hide_"+str(skin))
+		crounching=true
 
 # Egg Type comes from egg script enum but cant share the type sadly
 func picked_up_egg(egg_type: GM.EggType):
 	has_egg=true
 	egg_slot.frame= egg_type
-	print("egg")
 
 
 #successfully delivered egg.
@@ -68,6 +85,9 @@ func drop_egg():
 
 func respawn():
 	respwaning=true
+	skin=(randi()%3)+1
+	play_hide()
+	
 	visible=false
 	if has_egg:
 		drop_egg()
