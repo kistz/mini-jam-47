@@ -58,10 +58,20 @@ func give_egg():
 	GM.delivered_egg(egg_slot.frame)
 	egg_slot.frame= empty_slot
 
+func drop_egg():
+	has_egg=false
+	var egg=load("res://objects/egg.tscn").instantiate()
+	egg.egg = egg_slot.frame
+	egg.global_position=global_position
+	egg_slot.frame= empty_slot
+	get_parent().add_child(egg)
 
 func respawn():
 	respwaning=true
 	visible=false
+	if has_egg:
+		drop_egg()
+	
 	global_position=start_position
 	await get_tree().create_timer(1, false, false, true).timeout
 	respawn_anim.play("respawn")
