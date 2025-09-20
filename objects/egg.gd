@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if !Engine.is_editor_hint() &&  Input.is_action_just_pressed("interact"):
 		if $popup.visible:
 			GM.get_player().picked_up_egg(egg)
-			visible=false
+			queue_free()
 			
 	
 func on_area_entered(body: Player):
