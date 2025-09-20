@@ -6,18 +6,30 @@
 
 [node name="Camera" type="Node2D"]
 script = ExtResource("1_diie0")
-rotation_freedom = 120.0
+rotation_freedom = null
+rotation_speed = null
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_qqjab")
+flip_h = true
+hframes = 32
+vframes = 32
+frame = 44
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
 position = Vector2(1.6785174e-06, -0.40000153)
-rotation = 1.5707964
+rotation = 0.016794438
 color = Color(0.98039216, 0, 0, 0.43529412)
 texture = ExtResource("1_u5kg4")
 offset = Vector2(38.4, 0)
 texture_scale = 0.3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_qqjab")
-hframes = 32
-vframes = 32
-frame = 76
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Area2D"]
+position = Vector2(1, 1)
+polygon = PackedVector2Array(1, -1, 72, -35, 71, 31)

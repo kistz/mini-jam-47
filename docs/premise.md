@@ -66,3 +66,5 @@ If this happens the mastermind clones another chicken and sends it in after the 
 * pickpocket guard (sargent card)
 
 * Knock down pedastal?
+
+* Vents

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnvfogset2j3j"]
+
+[ext_resource type="Script" uid="uid://ev2t1od5i8ph" path="res://objects/egg.gd" id="1_ex3mg"]
+[ext_resource type="Texture2D" uid="uid://oi3unef8qtu6" path="res://atlas/general.png" id="2_yresf"]
+[ext_resource type="Texture2D" uid="uid://dsc3fag4428yp" path="res://keyaps/tilemap_white_packed.png" id="3_yresf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex3mg"]
+size = Vector2(22, 38)
+
+[node name="Egg" type="Node2D"]
+script = ExtResource("1_ex3mg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yresf")
+hframes = 32
+vframes = 32
+frame = 31
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ex3mg")
+
+[node name="popup" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="popup"]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 25.0
+offset_bottom = 7.0
+text = "Pick up"
+
+[node name="Tile0087" type="Sprite2D" parent="popup"]
+position = Vector2(-14.5, -9.5)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("3_yresf")
+hframes = 34
+vframes = 24
+frame = 87

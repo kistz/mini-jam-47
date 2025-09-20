@@ -5,12 +5,12 @@ extends Node2D
 enum CameraFrames {
 	Back= 13,
 	BackL= 12,
-	BackR= 12,
+	#BackR= 12,
 	Left =44,
-	Right =44,
+	#Right =44,
 	Front =77,
 	FrontL =76,
-	FrontR =76,
+	#FrontR =76,
 }
 
 #Back 13 0
@@ -28,31 +28,49 @@ var rotation_freedom:float= 90
 var rotation_speed:float =1
 
 @onready
-var start_rot=rotation
+var light: Node2D = $Node2D
+
+@onready
+var area: Area2D = $Node2D/Area2D
+
+@onready
+var cam: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	var tween= get_tree().create_tween()
-	rotation= deg_to_rad(-rotation_freedom/2)
-	tween.tween_property($PointLight2D,"rotation",deg_to_rad(rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(light,"rotation",deg_to_rad(rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(false)
-	tween.tween_property($PointLight2D,"rotation",deg_to_rad(-rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(light,"rotation",deg_to_rad(-rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
 	tween.set_loops()
 	
+	area.body_entered.connect(on_player_detected)
+	#area.body_entered(on_player_detected)
 	
+func on_player_detected(player:Player) :
+		player.respawn()
 
 func _process(delta: float) -> void:
-	if global_rotation_degrees < -22.5 && global_rotation_degrees > 22.5:
-		$Sprite2D.frame = CameraFrames.Front
-		$Sprite2D.h_flip = false
-	if global_rotation_degrees < -67.5 && global_rotation_degrees > -22.5:
-		$Sprite2D.frame = CameraFrames.FrontL
-		$Sprite2D.h_flip = false
-	if global_rotation_degrees < -67.5-45  && global_rotation_degrees > -67.5:
-		$Sprite2D.frame = CameraFrames.Left
-		$Sprite2D.h_flip = false
-	if global_rotation_degrees < -67.5-90  && global_rotation_degrees > -67.5-45:
-		$Sprite2D.frame = CameraFrames.BackL
-		$Sprite2D.h_flip = false
-	if global_rotation_degrees < -67.5-90  && global_rotation_degrees > -67.5-45:
-		$Sprite2D.frame = CameraFrames.Back
-		$Sprite2D.h_flip = false
+	if light.global_rotation_degrees > 22.5+90 && light.global_rotation_degrees < 22.5+135:
+		cam.frame = CameraFrames.FrontL
+		cam.flip_h = false
+	elif light.global_rotation_degrees > 22.5+45 && light.global_rotation_degrees < 22.5+90:
+		cam.frame = CameraFrames.Front
+		cam.flip_h = false
+	elif light.global_rotation_degrees > 22.5 && light.global_rotation_degrees < 22.5+45:
+		cam.frame = CameraFrames.FrontL
+		cam.flip_h = true
+	elif light.global_rotation_degrees > -22.5 && light.global_rotation_degrees < 22.5:
+		cam.frame = CameraFrames.Left
+		cam.flip_h = true
+	elif light.global_rotation_degrees > -67.5 && light.global_rotation_degrees < -22.5:
+		cam.frame = CameraFrames.BackL
+		cam.flip_h = true
+	elif light.global_rotation_degrees > -67.5-45  && light.global_rotation_degrees < -67.5:
+		cam.frame = CameraFrames.Back
+		cam.flip_h = false
+	elif light.global_rotation_degrees > -67.5-90  && light.global_rotation_degrees < -67.5-45:
+		cam.frame = CameraFrames.BackL
+		cam.flip_h = false
+	elif light.global_rotation_degrees > -67.5-90  && light.global_rotation_degrees < -67.5-45:
+		cam.frame = CameraFrames.Left
+		cam.flip_h = false

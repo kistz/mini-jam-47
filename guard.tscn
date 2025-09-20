@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opr0s"]
-size = Vector2(10, 19)
+size = Vector2(10, 7)
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_30cdx")
@@ -49,21 +49,16 @@ script = ExtResource("1_30cdx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ay375")
 animation = &"walking"
-frame_progress = 0.7319809
+frame_progress = 0.2484975
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
+position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_opr0s")
 
 [node name="Path2D" type="Path2D" parent="."]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-position = Vector2(1, 0)
-color = Color(1.1437415, 1.1595821, 0.5787581, 0.44705883)
-polygon = PackedVector2Array(4, 10, 98, -13, 98, 28)
+progress = 1883.5973
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(34, 10)

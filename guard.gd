@@ -1,3 +1,4 @@
+@tool
 extends CharacterBody2D
 
 
@@ -40,4 +41,4 @@ func _process(delta: float) -> void:
 	else:
 		$AnimatedSprite2D.flip_h =false
 	
-	position=$Path2D/PathFollow2D.position
+	position=new_pos
