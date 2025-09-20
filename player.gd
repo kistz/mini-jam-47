@@ -60,6 +60,7 @@ func run():
 
 func play_hide():
 	if !crounching:
+		animation.stop()
 		animation.play("hide_"+str(skin))
 		crounching=true
 

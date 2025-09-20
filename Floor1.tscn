@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b85hi7cdbba3h"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_uoamy"]
+
+[node name="Floor1" type="NavigationRegion2D"]
+navigation_polygon = SubResource("NavigationPolygon_uoamy")

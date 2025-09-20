@@ -57,6 +57,12 @@ interact={
 ]
 }
 
+[navigation]
+
+2d/merge_rasterizer_cell_scale=0.5
+2d/default_edge_connection_margin=3.0
+2d/default_link_connection_radius=3.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
