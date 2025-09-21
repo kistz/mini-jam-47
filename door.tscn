@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsc3fag4428yp" path="res://keyaps/tilemap_white_packed.png" id="3_0phs7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
-size = Vector2(21, 26)
+size = Vector2(21, 34)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0phs7"]
 font_color = Color(1, 0.26666668, 0.050980393, 1)
@@ -28,7 +28,7 @@ frame = 11
 [node name="area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
-position = Vector2(-1.5, 3)
+position = Vector2(-1.5, -1)
 shape = SubResource("RectangleShape2D_v6xrn")
 
 [node name="popup" type="Node2D" parent="."]

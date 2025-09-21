@@ -23,9 +23,9 @@ enum CameraFrames {
 #FrontR 12 2 flipped
 
 @export
-var rotation_freedom:float= 90
+var rotation_freedom:float =  90.0
 @export
-var rotation_speed:float =1
+var rotation_speed:float =  1.0
 
 @onready
 var light: Node2D = $Node2D
@@ -38,9 +38,9 @@ var cam: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	var tween= get_tree().create_tween()
-	tween.tween_property(light,"rotation",deg_to_rad(rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(light,"rotation",deg_to_rad(rotation_freedom),rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
 	tween.set_parallel(false)
-	tween.tween_property(light,"rotation",deg_to_rad(-rotation_freedom),5.0*rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(light,"rotation",deg_to_rad(-rotation_freedom),rotation_speed).as_relative().set_ease(Tween.EASE_IN_OUT)
 	tween.set_loops()
 	
 	area.body_entered.connect(on_player_detected)
