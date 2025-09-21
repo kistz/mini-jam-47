@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0yhuwc8r3rug"]
+
+[ext_resource type="Script" uid="uid://bb5f6utyc6240" path="res://wall_hider.gd" id="1_jh5sj"]
+
+[node name="Corridor1" type="Area2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_jh5sj")
