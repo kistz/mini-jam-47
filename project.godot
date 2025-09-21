@@ -15,7 +15,7 @@ config/description="very high quality gaym"
 config/version="5.0"
 run/main_scene="uid://o5icg7j1y3py"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://doeo3q0a8kyrs"
 
 [autoload]
 

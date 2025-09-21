@@ -5,7 +5,6 @@
 ## TODO: Linden
 - General
 	* Stairs Down (MAYBE)
-	* Coat-hanger
 	* Display Case alternatives (Item veriaty)
 	* Toilet
 	* Paintings
@@ -34,3 +33,4 @@
 * Luxury Desk (DONE)
 * Bookshelf (DONE)
 * Broom
+* Coat-hanger
