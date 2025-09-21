@@ -24,6 +24,7 @@ GM="*res://globals/game_manager.gd"
 [display]
 
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 
 [gui]

@@ -29,12 +29,13 @@ var kinder_egg=false
 var faberge_egg=false
 var ostrich_egg =false
 var chicken_egg=false
+var egg_count=0
 
 var police_alerted:bool=false
 
 var run_time: float =0.0
 
-var time_left: float= 30.0
+var time_left: float= 66.6
 
 func _ready() -> void:
 	if not FileAccess.file_exists("user://savegame.save"):
@@ -44,9 +45,10 @@ func _ready() -> void:
 	global.best_time = best_time
 
 func set_egg(egg: GM.EggType):
+	egg_count+=1
 	match egg:
-		GM.EggType.Faberge:
-			faberge_egg =true
+		GM.EggType.Ostrich:
+			ostrich_egg =true
 		GM.EggType.Dinosaur:
 			dino_egg =true
 		GM.EggType.Kinder:
@@ -55,6 +57,8 @@ func set_egg(egg: GM.EggType):
 			faberge_egg =true
 		GM.EggType.Chicken:
 			chicken_egg =true
+	if faberge_egg && dino_egg && kinder_egg && faberge_egg && chicken_egg:
+		GM.end_game()
 
 
 func set_player(p:Player):
@@ -92,3 +96,5 @@ func end_game():
 	var final_time= run_time
 	if final_time < global.best_time:
 		save_file.store_float(global.best_time)
+	get_tree().change_scene_to_file("res://end_screen.tscn")
+ 

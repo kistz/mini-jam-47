@@ -12,6 +12,7 @@ func _ready() -> void:
 	
 
 func collected_egg(egg: GM.EggType):
+	$top_right/HBoxContainer/Label2.text = str(GM.egg_count) + "/5"
 	match egg:
 		GM.EggType.Faberge:
 			$top_right/VBoxContainer/HBoxContainer5/CheckBox.button_pressed =true
@@ -30,4 +31,6 @@ func _process(delta: float) -> void:
 		GM.time_left -= delta
 		$time_left.visible=true
 		$time_left.text = str(GM.time_left).pad_decimals(3)
+	if GM.time_left < 0.0:
+		GM.end_game()
 		
