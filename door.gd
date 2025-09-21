@@ -11,6 +11,9 @@ var required_item: GM.PickupItems = GM.PickupItems.Keycard
 var is_horizontal:bool= true
 
 @export
+var sprite_flipped: bool=false
+
+@export
 var is_opened: bool = false
 
 enum DoorType {
@@ -43,7 +46,13 @@ func _ready() -> void:
 	else:
 		collider = $StaticBody2D/vert_col
 		$StaticBody2D/hor_col.set_deferred("disabled",true)
+		
+	if sprite_flipped:
+		door.flip_h=true
 	
+	if is_opened:
+		$StaticBody2D/vert_col.set_deferred("disabled",true)
+		$StaticBody2D/hor_col.set_deferred("disabled",true)
 	set_door(is_opened)
 
 

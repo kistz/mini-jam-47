@@ -16,7 +16,7 @@ script = ExtResource("1_h4vd5")
 texture = ExtResource("2_ln0r0")
 hframes = 32
 vframes = 32
-frame = 30
+frame = 62
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

@@ -28,4 +28,7 @@ func on_area_exited(body: Node2D):
 
 func set_item():
 	if item == GM.PickupItems.Keycard:
+		$Sprite2D.frame=62
+	if item == GM.PickupItems.ExhibitionDoor:
 		$Sprite2D.frame=30
+	
