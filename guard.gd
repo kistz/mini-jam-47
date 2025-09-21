@@ -35,7 +35,7 @@ func _ready() -> void:
 	agent.path_desired_distance = 4.0
 	agent.target_desired_distance = 4.0
 	
-	agent.target_reached.connect(next_target)
+	agent.navigation_finished.connect(next_target)
 	
 	for child in get_node("targets").get_children():
 		targets.push_back(child.global_position) 

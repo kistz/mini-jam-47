@@ -1,11 +1,11 @@
-extends Node2D
+extends Area2D
 
 
 
 
 func _ready() -> void:
-	$RoomArea.body_entered.connect(player_entered)
-	$RoomArea.body_exited.connect(player_left)
+	body_entered.connect(player_entered)
+	body_exited.connect(player_left)
 	modulate = Color(1.0,1.0,1.0,1.0)
 
 

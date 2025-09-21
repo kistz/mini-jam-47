@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://djedjq8je0eeb"]
+[gd_scene load_steps=13 format=4 uid="uid://djedjq8je0eeb"]
 
 [ext_resource type="PackedScene" uid="uid://b3lxpqa2ma88h" path="res://player.tscn" id="1_c6gwx"]
 [ext_resource type="PackedScene" uid="uid://d1dg5qmgw53ev" path="res://guard.tscn" id="2_2dftf"]
-[ext_resource type="Script" uid="uid://bb5f6utyc6240" path="res://wall_hider.gd" id="2_fv4w7"]
 [ext_resource type="Script" uid="uid://d1i8tke743864" path="res://wtfnavyek.gd" id="2_fvag4"]
 [ext_resource type="TileSet" uid="uid://cv3i8rjpj6v43" path="res://world_tilemap.tres" id="3_bcbcq"]
 [ext_resource type="PackedScene" uid="uid://bnvfogset2j3j" path="res://objects/egg.tscn" id="6_p1v5b"]
@@ -29,6 +28,7 @@ point_count = 5
 
 [node name="NavigationRegion2D" type="NavigationRegion2D"]
 navigation_polygon = SubResource("NavigationPolygon_bah7m")
+navigation_layers = 3
 
 [node name="FrontWallCollisions" type="StaticBody2D" parent="."]
 
@@ -51,7 +51,6 @@ script = ExtResource("2_fvag4")
 position = Vector2(113, 597)
 
 [node name="RoomStorage" type="Node2D" parent="World"]
-script = ExtResource("2_fv4w7")
 
 [node name="RoomArea" type="Area2D" parent="World/RoomStorage"]
 light_mask = 4
@@ -84,7 +83,7 @@ patrol_path = NodePath("../GP1")
 position = Vector2(13.399986, 52.28589)
 
 [node name="Marker2D2" type="Marker2D" parent="World/Guard1/targets"]
-position = Vector2(-62.600006, 6.2858887)
+position = Vector2(13.399986, 49.28589)
 
 [node name="Marker2D3" type="Marker2D" parent="World/Guard1/targets"]
 position = Vector2(133.4, -64.71411)
