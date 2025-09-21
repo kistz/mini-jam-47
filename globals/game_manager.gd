@@ -4,7 +4,10 @@ var player :Player
 
 enum PickupItems {
 	Keycard,
-	ExhibitionDoor
+	ExhibitionDoor,
+	CeoKeycard,
+	MiniStorageKey,
+	SideEntrace,
 }
 
 enum EggType {

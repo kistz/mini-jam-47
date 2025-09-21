@@ -10,7 +10,8 @@ func _ready() -> void:
 
 
 func player_entered(_d:Node2D):
-	modulate = Color(1.0,1.0,1.0,0.1)
+	print(_d)
+	modulate = Color(1.0,1.0,1.0,0.25)
 
 func player_left(_d:Node2D):
 	modulate = Color(1.0,1.0,1.0,1.0)

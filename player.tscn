@@ -298,7 +298,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 light_mask = 2
-collision_layer = 5
+collision_layer = 13
 collision_mask = 5
 script = ExtResource("1_onrkg")
 
