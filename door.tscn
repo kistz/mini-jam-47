@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cps4hrm6ji6vl"]
+
+[ext_resource type="Texture2D" uid="uid://dsdamk572mjpe" path="res://atlas/environment.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://djh5av1wul84n" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Texture2D" uid="uid://dsc3fag4428yp" path="res://keyaps/tilemap_white_packed.png" id="3_0phs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(16, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0phs7"]
+size = Vector2(12, 2)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_v6xrn")
+
+[node name="door" type="Sprite2D" parent="."]
+texture = ExtResource("1_ba8gm")
+hframes = 32
+vframes = 16
+frame = 44
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="popup" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="popup"]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 25.0
+offset_bottom = 7.0
+text = "Open"
+
+[node name="Tile0087" type="Sprite2D" parent="popup"]
+position = Vector2(-14.5, -9.5)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("3_0phs7")
+hframes = 34
+vframes = 24
+frame = 87
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_0phs7")

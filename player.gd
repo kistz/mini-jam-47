@@ -69,6 +69,8 @@ func picked_up_egg(egg_type: GM.EggType):
 	has_egg=true
 	egg_slot.frame= egg_type
 
+func is_guard() -> bool:
+	return false
 
 #successfully delivered egg.
 func give_egg():

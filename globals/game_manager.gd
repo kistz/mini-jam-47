@@ -1,6 +1,10 @@
 extends Node
 
 
+enum PickupItems {
+	Keycard,
+}
+
 enum EggType {
 	Faberge = 31,
 	Dinosaur= 63,

@@ -41,20 +41,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opr0s"]
-size = Vector2(10, 7)
+[sub_resource type="CircleShape2D" id="CircleShape2D_cruxe"]
+radius = 1.0
 
 [node name="Guard" type="CharacterBody2D"]
 script = ExtResource("1_30cdx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
 sprite_frames = SubResource("SpriteFrames_ay375")
 animation = &"walking"
 frame_progress = 0.7410112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 12.5)
-shape = SubResource("RectangleShape2D_opr0s")
+shape = SubResource("CircleShape2D_cruxe")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(34, 10)
@@ -65,7 +65,7 @@ texture = ExtResource("3_aoykg")
 texture_scale = 0.2
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(34, 10)
+position = Vector2(34, 11.000001)
 scale = Vector2(1.1721679, 1.1640626)
 color = Color(1, 1, 0.5803922, 1)
 energy = 0.4
@@ -73,9 +73,10 @@ texture = ExtResource("4_cruxe")
 texture_scale = 0.2
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 5.0
-target_desired_distance = 6.0
+path_desired_distance = 3.0
+target_desired_distance = 5.0
 navigation_layers = 3
+avoidance_enabled = true
 avoidance_layers = 3
 avoidance_mask = 3
 debug_enabled = true

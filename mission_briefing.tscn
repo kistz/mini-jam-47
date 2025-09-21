@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp5y38fu6gtb5"]
+
+[ext_resource type="Script" uid="uid://8ym3o5era7d" path="res://mission_briefing.gd" id="1_h4gam"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpqt1"]
+font_size = 64
+
+[node name="MissionBriefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h4gam")
+
+[node name="Briefing Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 129.0
+offset_right = 303.0
+offset_bottom = 156.0
+text = "Hello Chicken 47. You need to be Quiiiick!!!!!
+The Museum stole your EGGGGS!!!
+Deliver them here ASAP!!!!!!!
+Over and out -"
+label_settings = SubResource("LabelSettings_rpqt1")

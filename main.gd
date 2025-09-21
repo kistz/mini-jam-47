@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func on_start_pressed():
-	get_tree().change_scene_to_file("res://World.tscn")
+	get_tree().change_scene_to_file("res://Floor1.tscn")

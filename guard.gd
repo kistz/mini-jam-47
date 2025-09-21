@@ -4,9 +4,6 @@ extends CharacterBody2D
 var patrolling_speed: float = 10
 var sprinting_speed: float= 20
 
-@export 
-var patrol_path: Path2D
-
 
 
 enum GuardMode {
@@ -29,7 +26,6 @@ var cur_tartget= 0
 
 
 func _ready() -> void:
-	patrol_path.add_child(following)
 	$AnimatedSprite2D.play("walking")
 	
 	agent.path_desired_distance = 4.0
@@ -51,6 +47,8 @@ func actor_setup():
 	agent.target_position=targets[cur_tartget]
 	print(targets[cur_tartget])
 
+func is_guard() -> bool:
+	return true
 
 func next_target():
 	print("WTF")
@@ -61,12 +59,6 @@ func next_target():
 	print(targets[cur_tartget])
 	agent.target_position = targets[cur_tartget]
 
-
-func _get_configuration_warnings() -> PackedStringArray:
-	if patrol_path == null:
-		return PackedStringArray(["Pls select a Path"])
-	else:
-		return PackedStringArray()
 		
 #func _process(delta: float) -> void:
 	#var old_pos= following.global_position
