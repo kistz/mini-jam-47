@@ -13,5 +13,5 @@
 	* Display table
 - Kitchen
 	* Sink
-	* Kitchen table (name?)
+	* Kitchen table (DONE)
 	
