@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmkbf8iajpm62"]
+
+[ext_resource type="Script" uid="uid://btd0gw5k7tpj" path="res://pickup_objects.gd" id="1_h4vd5"]
+[ext_resource type="Texture2D" uid="uid://oi3unef8qtu6" path="res://atlas/general.png" id="2_ln0r0"]
+[ext_resource type="Texture2D" uid="uid://dsc3fag4428yp" path="res://keyaps/tilemap_white_packed.png" id="3_ln0r0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4vd5"]
+size = Vector2(22, 38)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ln0r0"]
+
+[node name="PickupObjects" type="Node2D"]
+script = ExtResource("1_h4vd5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ln0r0")
+hframes = 32
+vframes = 32
+frame = 30
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_h4vd5")
+
+[node name="popup" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="popup"]
+offset_left = -9.0
+offset_top = -16.0
+offset_right = 25.0
+offset_bottom = 7.0
+text = "Pick up"
+
+[node name="Tile0087" type="Sprite2D" parent="popup"]
+position = Vector2(-14.5, -9.5)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("3_ln0r0")
+hframes = 34
+vframes = 24
+frame = 87
+
+[node name="Label2" type="Label" parent="popup"]
+offset_left = -7.0000005
+offset_top = -5.0
+offset_right = 25.835
+offset_bottom = 18.0
+scale = Vector2(0.395, 0.395)
+label_settings = SubResource("LabelSettings_ln0r0")
+horizontal_alignment = 1

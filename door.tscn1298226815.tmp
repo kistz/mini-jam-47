@@ -8,7 +8,8 @@
 size = Vector2(21, 26)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0phs7"]
-font_color = Color(1, 0.26666668, 0.050980393, 1)
+font_size = 8
+font_color = Color(0.8648014, 0.20248389, 1.6364455e-06, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0phs7"]
 size = Vector2(12, 2)
@@ -41,15 +42,6 @@ offset_right = 25.0
 offset_bottom = 7.0
 text = "Open"
 
-[node name="Label2" type="Label" parent="popup"]
-offset_left = -7.0000005
-offset_top = -5.0
-offset_right = 25.835
-offset_bottom = 18.0
-scale = Vector2(0.395, 0.395)
-label_settings = SubResource("LabelSettings_0phs7")
-horizontal_alignment = 1
-
 [node name="Tile0087" type="Sprite2D" parent="popup"]
 position = Vector2(-14.5, -9.5)
 scale = Vector2(0.4375, 0.4375)
@@ -57,6 +49,12 @@ texture = ExtResource("3_0phs7")
 hframes = 34
 vframes = 24
 frame = 87
+
+[node name="Label2" type="Label" parent="popup"]
+offset_right = 40.0
+offset_bottom = 12.0
+label_settings = SubResource("LabelSettings_0phs7")
+horizontal_alignment = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4

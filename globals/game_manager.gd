@@ -33,3 +33,9 @@ func get_player() -> Player:
 func police_alerted() -> bool:
 	#TODO
 	return true
+	
+func get_item_text(item: PickupItems) -> String:
+	match item:
+		PickupItems.Keycard:
+			return "Keycard"
+	return ""
