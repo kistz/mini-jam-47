@@ -1,14 +1,14 @@
 ## TODO: Linden
 - General
-	* Wall lamp
+	* Wall lamp (DONE)
 	* More walls:
-		- Fancier wall
-		- Additional brick wall
-	* Wall ornament patterns
+		- Fancier wall (???)
+		- Additional brick wall (DONE??)
+	* Wall ornament patterns (DONE??)
 - Museum
-	* Remote pedestal button
-	* Pedestal glass
-	* Public rope seperator (name??)
+	* Remote pedestal button (DONE)
+	* Pedestal glass (DONE)
+	* Public rope seperator
 	* Museum statue/bust?
 	* Display table
 - Kitchen
