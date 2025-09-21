@@ -8,6 +8,7 @@ enum PickupItems {
 	CeoKeycard,
 	MiniStorageKey,
 	SideEntrace,
+	MainDoor
 }
 
 enum EggType {
@@ -75,6 +76,14 @@ func get_item_text(item: PickupItems) -> String:
 			return "Keycard"
 		PickupItems.ExhibitionDoor:
 			return "Exhibition"
+		PickupItems.CeoKeycard:
+			return "CEO"
+		PickupItems.MainDoor:
+			return "Spare Key"
+		PickupItems.SideEntrace:
+			return "Staff Entrance"
+		PickupItems.MiniStorageKey:
+			return "Storage"
 	return ""
 
 
