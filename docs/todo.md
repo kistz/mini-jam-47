@@ -6,6 +6,7 @@
 * Pedestal glass (DONE)
 * Display table (DONE)
 * Couch (DONE)
+* Main Menu Screen (DONE)
 - Kitchen (DONE)
 	* Sink (DONE)
 	* Kitchen table (DONE)
@@ -16,9 +17,23 @@
 	
 
 ## TODO: Linden
+* Storage box (KINDA DONE)
 - General
-	* Storage box (KINDA DONE)
-	* Double Doors
+	* Stairs Down (MAYBE)
+	* Kitchen
+		- Plate
+		- Chair
+		- White/Gray table
+	* Storage shelf
+	* Luxury Desk
+	* Bookshelf
+	* Display Case alternatives (Item veriaty)
+	* Coat-hanger
+	* Toilet
+	* Paintings
+		- Desert
+	* Broom
+	* Purple Carpet
 	
 - Museum
 	* Public rope seperator
