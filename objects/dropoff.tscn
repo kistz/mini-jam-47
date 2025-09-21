@@ -4,21 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://dsc3fag4428yp" path="res://keyaps/tilemap_white_packed.png" id="2_n56f3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mh8jl"]
-size = Vector2(58, 81)
+size = Vector2(58, 162)
 
 [node name="Dropoff" type="Area2D"]
 z_index = -1
-collision_layer = 2
-collision_mask = 2
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_q7k21")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_mh8jl")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 0.024999619)
+scale = Vector2(1, 2.025)
 color = Color(0.5882353, 1, 1, 0.4862745)
-polygon = PackedVector2Array(-29, -41, 29, -41, 29, 39, -29, 39)
+polygon = PackedVector2Array(-29, -41, -0.3216858, -41, 29, -41, 29, 39, -29, 39)
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]
 color = Color(0.5882353, 1, 1, 0.76862746)
@@ -29,14 +31,29 @@ polygon = PackedVector2Array(-29, -41, 29, -41, 29, 39, -29, 39)
 [node name="popup" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="popup"]
-offset_left = -9.0
-offset_top = -16.0
+offset_left = -12.0
+offset_top = 56.0
 offset_right = 25.0
-offset_bottom = 7.0
+offset_bottom = 79.0
 text = "Deliver"
 
 [node name="Tile0087" type="Sprite2D" parent="popup"]
-position = Vector2(-14.5, -9.5)
+position = Vector2(-17.5, 62.499992)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("2_n56f3")
+hframes = 34
+vframes = 24
+frame = 87
+
+[node name="Label2" type="Label" parent="popup"]
+offset_left = -11.0
+offset_top = -72.0
+offset_right = 26.0
+offset_bottom = -49.0
+text = "Deliver"
+
+[node name="Tile0088" type="Sprite2D" parent="popup"]
+position = Vector2(-16.5, -65.5)
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("2_n56f3")
 hframes = 34

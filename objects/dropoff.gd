@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 	
 func on_body_entered(player: Player):
-	if GM.get_player().has_egg:
+	if player.has_egg:
 		$popup.visible=true
 
 func on_player_exited(_d:Player):

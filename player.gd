@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const speed= 50.0
+const speed= 75.0
 
 var has_egg = false
 
@@ -28,12 +28,14 @@ var items: Dictionary = Dictionary()
 
 const empty_slot:int= 250
 
+func _init() -> void:
+	GM.set_player(self)
+
 func _ready() -> void:
 	play_hide()
 	respawn_anim.animation_finished.connect(func(_d): respwaning =false)
 	respawn_anim.play("respawn")
 	egg_slot.frame=empty_slot
-	GM.set_player(self)
 
 
 func _process(delta: float) -> void:

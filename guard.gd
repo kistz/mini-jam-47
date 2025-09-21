@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-var patrolling_speed: float = 10
-var sprinting_speed: float= 20
+var speed: float = 10
 
 
 
@@ -12,6 +11,8 @@ enum GuardMode {
 }
 
 var following= PathFollow2D.new()
+
+var chase_timer:Timer= Timer.new()
 
 var guard_mode: GuardMode = GuardMode.Patrolling
 
@@ -24,6 +25,8 @@ var back_and_forth: bool = false
 var targets: Array[Vector2]
 var cur_tartget= 0
 
+@onready
+var area= $thingys/Area2D
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("walking")
@@ -33,9 +36,15 @@ func _ready() -> void:
 	
 	agent.navigation_finished.connect(next_target)
 	
+	area.body_entered.connect(on_player_detected)
+	
 	for child in get_node("targets").get_children():
 		targets.push_back(child.global_position) 
 	
+	targets.push_back(global_position)
+	
+	chase_timer.timeout.connect(reset_guard)
+	add_child(chase_timer)
 	
 	actor_setup.call_deferred()
 
@@ -51,6 +60,12 @@ func is_guard() -> bool:
 	return true
 
 func next_target():
+	if guard_mode == GuardMode.Chasing:
+		GM.get_player().respawn()
+		guard_mode = GuardMode.Patrolling
+		speed = 30
+	
+	
 	#print("WTF")
 	cur_tartget+=1
 	if cur_tartget == targets.size():
@@ -59,6 +74,11 @@ func next_target():
 	#print(targets[cur_tartget])
 	agent.target_position = targets[cur_tartget]
 
+func on_player_detected(player:Player) :
+		agent.target_position = player.global_position
+		guard_mode = GuardMode.Chasing
+		chase_timer.start(4)
+		speed=80
 		
 #func _process(delta: float) -> void:
 	#var old_pos= following.global_position
@@ -75,6 +95,9 @@ func next_target():
 	#global_position=new_pos
 
 func _physics_process(delta):
+	if guard_mode == GuardMode.Chasing:
+		agent.target_position = GM.get_player().global_position
+	
 	if agent.is_navigation_finished():
 		#print("finished")
 		return
@@ -83,11 +106,25 @@ func _physics_process(delta):
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = agent.get_next_path_position()
 	
-	velocity = current_agent_position.direction_to(next_path_position) * patrolling_speed
+	velocity = current_agent_position.direction_to(next_path_position) * speed
 	
+	var angle = velocity.angle()
+	var rot= $thingys.global_rotation
+	$thingys.global_rotation = lerp_angle(rot,angle,0.02)
+
 	if velocity.x >0:
-		$AnimatedSprite2D.flip_h =true
-	else:
 		$AnimatedSprite2D.flip_h =false
+		$thingys.scale.y=1
+	else:
+		$AnimatedSprite2D.flip_h =true
+		$thingys.scale.y=-1
 	
 	move_and_slide()
+
+
+func reset_guard():
+	guard_mode = GuardMode.Patrolling
+	speed = 30
+	next_target()
+	
+	

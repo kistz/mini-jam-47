@@ -10,7 +10,9 @@ config_version=5
 
 [application]
 
-config/name="mini-jam-47"
+config/name="Chicman"
+config/description="very high quality gaym"
+config/version="5.0"
 run/main_scene="uid://o5icg7j1y3py"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
