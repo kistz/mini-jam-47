@@ -4,3 +4,6 @@
 
 # Ableton exports
 *.asd
+
+# Binary Export
+bin

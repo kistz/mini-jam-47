@@ -1,3 +1,20 @@
+## Joe
+- Import Settings
+	* Environment seems to get "mud"/shit pixels when imported. Doesn't appear in photoshop
+
+## TODO: Linden
+- General
+	* Stairs Down (MAYBE)
+	* Coat-hanger
+	* Display Case alternatives (Item veriaty)
+	* Toilet
+	* Paintings
+		- Desert
+	* Purple Carpet
+- Museum
+	* Public rope seperator
+	* Museum statue/bust?
+
 ## DONE:
 * Wall lamp (DONE)
 * Additional brick wall (DONE??)
@@ -7,34 +24,13 @@
 * Display table (DONE)
 * Couch (DONE)
 * Main Menu Screen (DONE)
+* Storage box/shelf
 - Kitchen (DONE)
 	* Sink (DONE)
 	* Kitchen table (DONE)
-
-## Joe
-- Import Settings
-	* Environment seems to get "mud"/shit pixels when imported. Doesn't appear in photoshop
-	
-
-## TODO: Linden
-* Storage box (KINDA DONE)
-- General
-	* Stairs Down (MAYBE)
-	* Kitchen
+	* Kitchen 2 (DONE)
 		- Plate
 		- Chair
-		- White/Gray table
-	* Storage shelf
-	* Luxury Desk
-	* Bookshelf
-	* Display Case alternatives (Item veriaty)
-	* Coat-hanger
-	* Toilet
-	* Paintings
-		- Desert
-	* Broom
-	* Purple Carpet
-	
-- Museum
-	* Public rope seperator
-	* Museum statue/bust?
+* Luxury Desk (DONE)
+* Bookshelf (DONE)
+* Broom
