@@ -45,18 +45,18 @@ func actor_setup():
 
 	# Now that the navigation map is no longer empty, set the movement target.
 	agent.target_position=targets[cur_tartget]
-	print(targets[cur_tartget])
+	#print(targets[cur_tartget])
 
 func is_guard() -> bool:
 	return true
 
 func next_target():
-	print("WTF")
+	#print("WTF")
 	cur_tartget+=1
 	if cur_tartget == targets.size():
 		cur_tartget=0
-	print(cur_tartget)
-	print(targets[cur_tartget])
+	#print(cur_tartget)
+	#print(targets[cur_tartget])
 	agent.target_position = targets[cur_tartget]
 
 		

@@ -24,6 +24,8 @@ var respwaning: bool = true
 @onready
 var start_position = global_position
 
+var items: Dictionary = Dictionary()
+
 const empty_slot:int= 250
 
 func _ready() -> void:
@@ -99,3 +101,12 @@ func respawn():
 	await get_tree().create_timer(1, false, false, true).timeout
 	respawn_anim.play("respawn")
 	visible=true
+
+
+func has_unlock(item: GM.PickupItems) -> bool:
+	if items.has(item):
+		return true
+	return false
+
+func pick_up_item(item: GM.PickupItems):
+	items.set(item,true)
