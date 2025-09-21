@@ -1,15 +1,16 @@
 ## Joe
 - Import Settings
 	* Environment seems to get "mud"/shit pixels when imported. Doesn't appear in photoshop
+- Win Screen
+- Sprite Sorting
+- Start Screen
+- Camera facing opposite direction
 
 ## TODO: Linden
 - General
-	* Stairs Down (MAYBE)
 	* Display Case alternatives (Item veriaty)
 	* Toilet
-	* Paintings
-		- Desert
-	* Purple Carpet
+	* Museum Sign
 - Museum
 	* Public rope seperator
 	* Museum statue/bust?
@@ -34,3 +35,6 @@
 * Bookshelf (DONE)
 * Broom
 * Coat-hanger
+* Paintings
+	- Desert
+* Purple Carpet
