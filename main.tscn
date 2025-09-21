@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://o5icg7j1y3py"]
+[gd_scene load_steps=6 format=3 uid="uid://o5icg7j1y3py"]
 
 [ext_resource type="Script" uid="uid://b7kotbt154xpd" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://76kl4gky1e1y" path="res://atlas/title_screen.png" id="2_0xm2m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2yge"]
+font_size = 256
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bvp3"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 64
+font_color = Color(1, 1, 0.44705883, 1)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,7 +22,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("2_0xm2m")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
 [node name="Panel" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,10 +45,51 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 194.0
-offset_right = 269.0
-offset_bottom = 264.0
+offset_left = 464.0
+offset_top = 492.0
+offset_right = 696.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 128
 text = "Start"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 30.0
+offset_right = 160.0
+offset_bottom = 126.0
+grow_horizontal = 2
+text = "Chicman"
+label_settings = SubResource("LabelSettings_h2yge")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.0
+offset_top = 212.0
+offset_right = 153.0
+offset_bottom = 311.0
+grow_horizontal = 2
+text = "Night at the Museum"
+label_settings = SubResource("LabelSettings_1bvp3")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_top = 369.0
+offset_right = 194.0
+offset_bottom = 468.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_0xm2m")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

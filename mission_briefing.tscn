@@ -14,14 +14,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4gam")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Briefing Text" type="Label" parent="."]
 layout_mode = 0
-offset_left = 107.0
-offset_top = 129.0
-offset_right = 303.0
-offset_bottom = 156.0
-text = "Hello Chicken 47. You need to be Quiiiick!!!!!
-The Museum stole your EGGGGS!!!
-Deliver them here ASAP!!!!!!!
-Over and out -"
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 811.0
+offset_bottom = 245.0
+text = "Chicken 47,
+your mission is to infiltrate the museum
+ and retrieve *cough* YOUR eggs.
+Good retrieving 47 -"
 label_settings = SubResource("LabelSettings_rpqt1")

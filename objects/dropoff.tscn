@@ -7,7 +7,6 @@
 size = Vector2(58, 162)
 
 [node name="Dropoff" type="Area2D"]
-z_index = -1
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_q7k21")
@@ -19,7 +18,7 @@ shape = SubResource("RectangleShape2D_mh8jl")
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(0, 0.024999619)
 scale = Vector2(1, 2.025)
-color = Color(0.5882353, 1, 1, 0.4862745)
+color = Color(0.5882353, 1, 1, 0.2)
 polygon = PackedVector2Array(-29, -41, -0.3216858, -41, 29, -41, 29, 39, -29, 39)
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygon2D"]

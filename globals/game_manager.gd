@@ -21,7 +21,7 @@ enum EggType {
 signal collected_egg(egg:EggType)
 
 # GLOBAL STATE
-var global: GlobalState
+var global: GlobalState = GlobalState.new()
 
 var dino_egg=false
 var kinder_egg=false
@@ -34,6 +34,13 @@ var police_alerted:bool=false
 var run_time: float =0.0
 
 var time_left: float= 30.0
+
+func _ready() -> void:
+	if not FileAccess.file_exists("user://savegame.save"):
+		return
+	var save=FileAccess.open("user://savegame.save", FileAccess.READ)
+	var best_time=save.get_float()
+	global.best_time = best_time
 
 func set_egg(egg: GM.EggType):
 	match egg:
@@ -69,3 +76,10 @@ func get_item_text(item: PickupItems) -> String:
 		PickupItems.ExhibitionDoor:
 			return "Exhibition"
 	return ""
+
+
+func end_game():
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var final_time= run_time
+	if final_time < global.best_time:
+		save_file.store_float(global.best_time)

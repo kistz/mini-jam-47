@@ -26,6 +26,8 @@ var start_position = global_position
 
 var items: Dictionary = Dictionary()
 
+var mission_briefing:bool=true
+
 const empty_slot:int= 250
 
 func _init() -> void:
@@ -40,6 +42,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if respwaning:
+		return
+	if mission_briefing:
 		return
 	if Input.is_action_pressed("up"):
 		run()
